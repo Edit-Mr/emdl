@@ -1,0 +1,7 @@
+pyperclip
+re
+requests
+beautifulsoup4
+os
+yt_dlp
+PyPDF2
