@@ -17,11 +17,17 @@
 
 ## 安裝
 
-### 安裝 Python
+### Windows
+
+到 [release 頁面](https://github.com/Edit-Mr/worship-download/releases/tag/v1.0)下載 `worship.exe`，雙擊執行即可。
+
+### 自行編譯
+
+#### 安裝 Python
 
 請先安裝 Python 3.6 以上版本，並確認已經加入環境變數。
 
-### 安裝套件
+#### 安裝套件
 
 ```bash
 pip install -r requirements.txt
@@ -33,9 +39,7 @@ pip install -r requirements.txt
 pip install pyperclip requests beautifulsoup4 yt_dlp PyPDF2
 ```
 
-## 使用
-
-### 執行
+#### 使用
 
 ```bash
 python main.py
