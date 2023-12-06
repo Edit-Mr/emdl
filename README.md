@@ -1,8 +1,31 @@
 # worship-download
 
-複製歌單後執行即可自動下載 Google Doc 歌譜 PDF，以及 YouTube 音檔
+你只需要複製一個歌單文字，比如說:
+
+> 2/9 歌單來囉，久等了！
+> 1.被造的意義 - G / 150bpm  
+> 連結：https://reurl.cc/L6LxjL  
+> 歌譜：https://reurl.cc/L6Lx1L  
+> 2.不能被搖動-B  
+> 連結：https://youtu.be/eABWf8MvqKk?si=z9jF2rfTEfsiBz2j  
+> 歌譜：https://tinyurl.com/ylalc8j6  
+> 3.愛降下-E  
+> 連結：https://youtu.be/6KYqygcT2Uk?si=2vBOO1Kt9wnKYEJX  
+> 歌譜：https://tinyurl.com/yvkwadk3  
+> 4.All Hail King Jesus 稱頌主耶穌 - A / 75bpm  
+> 連結：https://reurl.cc/o5ndzg  
+> 中文：https://reurl.cc/z6v8m6  
+> 歌譜：https://reurl.cc/edexjx  
+> 奉獻：3  
+> 回應：4  
+> 咱們週六見，一起敬拜愛我們的天父：）
+
+
+
+執行即可自動下載 Google Doc 歌譜 PDF，以及 YouTube 音檔
 
 樂譜將按照原始順序合併為一個 PDF 檔案，音檔將按順序下載為 MP3 檔案，其他雲端硬碟檔案將直接下載。
+
 
 ## 支援的短網址服務
 
