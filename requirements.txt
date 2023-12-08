@@ -3,3 +3,4 @@ requests
 beautifulsoup4
 yt_dlp
 PyPDF2
+tk

@@ -1,4 +1,8 @@
-# worship-download
+# EMDL
+
+你敢複製，我就敢下載
+
+## 簡介
 
 你只需要複製一個歌單文字，比如說:
 
@@ -22,9 +26,9 @@
 
 
 
-執行即可自動下載 Google Doc 歌譜 PDF，以及 YouTube 音檔
+執行即可自動下載 Google Doc 歌譜 PDF，以及 YouTube 音檔。樂譜將按照原始順序合併為一個 PDF 檔案，音檔將按順序下載為 MP3 檔案，其他雲端硬碟檔案將直接下載。
 
-樂譜將按照原始順序合併為一個 PDF 檔案，音檔將按順序下載為 MP3 檔案，其他雲端硬碟檔案將直接下載。
+如果你想要更多自訂選項，請使用 GUI 版本。
 
 
 ## 支援的服務
@@ -34,8 +38,10 @@
 ### 檔案
 
 - [x] [Google Drive](https://drive.google.com/)
+- [X] [Google Doc](https://docs.google.com/)
 - [X] [YouTube](https://www.youtube.com/)
-- [ ] []
+- [X] [所有 youtube-dl 支援的 1225 個網站](https://ytdl-org.github.io/youtube-dl/supportedsites.html)
+
 ### 短網址
 
 - [x] [bit.ly](https://bitly.com/)
@@ -47,19 +53,30 @@
 
 ## 使用方式
 
-複製歌單後執行即可
+請先複製一段包含一個或多個連結的文字再執行程式即可。
 
-### Windows
+如果有使用影片轉檔功能，請確保已安裝 [FFmpeg](https://ffmpeg.org/) 並已添加至環境變數。
+
+### 簡易版
+
+#### Windows
 
 從 [release 頁面](https://github.com/Edit-Mr/worship-download/releases/tag/v1.0) 下載 `worship.exe`，雙擊執行即可，無須安裝。
 
-### 手動編譯
 
-#### 安裝 Python
+### GUI 版本
+
+#### Windows
+
+從 [release 頁面](https://github.com/Edit-Mr/worship-download/releases/tag/v1.0) 下載 `emdl.exe`，雙擊執行即可，無須安裝。
+
+#### 手動編譯
+
+##### 安裝 Python
 
 首先，安裝 Python 3.8 以上版本，確保已添加至環境變數。
 
-#### 安裝相依套件
+##### 安裝相依套件
 
 ```bash
 pip install -r requirements.txt
@@ -67,11 +84,13 @@ pip install -r requirements.txt
 或
 
 ```bash
-pip install pyperclip requests beautifulsoup4 yt_dlp PyPDF2
+pip install pyperclip requests beautifulsoup4 yt_dlp PyPDF2 tk
 ```
-#### 使用
+##### 使用
 
 ```bash
 python main.py
+# 或
+python gui.py
+# 或雙擊 emdl.bat 檔案
 ```
-或雙擊 執行.bat 檔案。
