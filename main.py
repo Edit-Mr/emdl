@@ -23,7 +23,7 @@ for url in urls:
         if input_element:
             value = input_element.get('value')
             redirected_urls.append(value)
-            print("找到",value)
+            print("找到", value)
     elif "piee.pw" in url:
         html = response.text
         soup = BeautifulSoup(html, 'html.parser')
@@ -31,13 +31,13 @@ for url in urls:
         if a_element:
             href = a_element.get('href')
             redirected_urls.append(href)
-            print("找到",href)
+            print("找到", href)
         else:
             redirected_urls.append(response.url)
-            print("沒有找到",response.url,"的真實網址")
+            print("沒有找到", response.url, "的真實網址")
     else:
         redirected_urls.append(response.url)
-        print("找到",response.url)
+        print("找到", response.url)
 
 # Download as PDF or original
 for url in redirected_urls:
@@ -55,15 +55,15 @@ for url in redirected_urls:
         else:
             print(f"Error downloading {url}")
     elif "https://drive.google.com/file/" in url:
-        # Download as original
+        file_id = url.split("drive.google.com/file/d/")[1].split("/")[0]
+        url = f"https://drive.google.com/uc?id={file_id}"
         response = requests.get(url)
         if response.status_code == 200:
-            filename = os.path.basename(url)
-            index = redirected_urls.index(url)
-            filename = f"index{index}.{filename.split('.')[-1]}"
-            with open(filename, 'wb') as file:
+            filename = response.headers['Content-Disposition'].split(
+                "filename=")[1].split(";")[0].replace('"', '')
+            with open(filename, "wb") as file:
                 file.write(response.content)
-            print(f"成功下載檔案 {filename}")
+                print(f"成功下載檔案 {filename}")
         else:
             print(f"檔案下載失敗 {url}")
     elif "you" in url:
@@ -93,18 +93,19 @@ for url in redirected_urls:
     else:
         print(f"YouTube 下載失敗 {url}")
 
-pdf_files = [file for file in os.listdir() if file in pdfs]
+if pdfs:
+    pdf_files = [file for file in os.listdir() if file in pdfs]
 
-# Merge PDF files
-merger = PdfMerger()
-for pdf_file in pdf_files:
-    merger.append(pdf_file)
+    # Merge PDF files
+    merger = PdfMerger()
+    for pdf_file in pdf_files:
+        merger.append(pdf_file)
 
-# Save merged PDF as "merged.pdf"
-merger.write("歌譜.pdf")
-merger.close()
+    # Save merged PDF as "merged.pdf"
+    merger.write("歌譜.pdf")
+    merger.close()
 
-# Delete original PDF files
-for pdf_file in pdf_files:
-    os.remove(pdf_file)
-print("已合併歌譜")
+    # Delete original PDF files
+    for pdf_file in pdf_files:
+        os.remove(pdf_file)
+    print("已合併歌譜")

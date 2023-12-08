@@ -27,9 +27,16 @@
 樂譜將按照原始順序合併為一個 PDF 檔案，音檔將按順序下載為 MP3 檔案，其他雲端硬碟檔案將直接下載。
 
 
-## 支援的短網址服務
+## 支援的服務
 
 以下是目前經過測試可處理的服務商，如有需要，可自行新增或提出問題。
+
+### 檔案
+
+- [x] [Google Drive](https://drive.google.com/)
+- [X] [YouTube](https://www.youtube.com/)
+- [ ] []
+### 短網址
 
 - [x] [bit.ly](https://bitly.com/)
 - [x] [tinyurl](https://tinyurl.com/)
