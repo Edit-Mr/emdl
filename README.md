@@ -1,6 +1,8 @@
 # EMDL
 
-你敢複製，我就敢下載
+你敢複製，我就敢下載  
+絕對是你人生中用過最好用的下載器。
+音樂和影片都會是全網最高畫質，MP3不但會有專輯縮圖還會嵌入作者資訊和發佈專櫃及年份。
 
 ## 簡介
 
@@ -33,7 +35,7 @@
 
 ## 支援的服務
 
-以下是目前經過測試可處理的服務商，如有需要，可自行新增或提出問題。
+以下是目前經過測試可處理的服務商，如有需要，可自行新增或提出 issue。
 
 ### 檔案
 
@@ -41,6 +43,7 @@
 - [X] [Google Doc](https://docs.google.com/)
 - [X] [YouTube](https://www.youtube.com/)
 - [X] [所有 youtube-dl 支援的 1225 個網站](https://ytdl-org.github.io/youtube-dl/supportedsites.html)
+    - 我不會說酸鹼值網站也能下載
 
 ### 短網址
 
