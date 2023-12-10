@@ -9,7 +9,6 @@ import tkinter as tk
 from tkinter import ttk
 import threading
 
-# Download as PDF or original
 
 def download(redirected_urls):
     print(combinePdf)
@@ -30,7 +29,8 @@ def download(redirected_urls):
         a.set("正在下載 " + url)
         root.update()
         if "https://docs.google.com/document/" in url:
-            pdf_url = f"{url.split('/edit')[0]}/export?format={fileValue.get()}"
+            pdf_url = f"{url.split('/edit')[0]
+                         }/export?format={fileValue.get()}"
             response = requests.get(pdf_url)
             if response.status_code == 200:
                 filename = os.path.basename(pdf_url)
@@ -144,10 +144,6 @@ def download(redirected_urls):
 
 root = tk.Tk()
 root.title('EMDL - 萬能下載器')
-
-b64_data = requests.get("url").text
-image = PhotoImage(data=b64_data)
-root.tk.call('wm', 'iconphoto', root._w, image)
 x = (root.winfo_screenwidth()/2) - 250
 y = (root.winfo_screenheight()/2) - 250
 root.geometry('500x400+%d+%d' % (x, y))
@@ -218,7 +214,7 @@ def start():
                 ytFormatBox = tk.LabelFrame(group, bd=0)
                 ytFormatBox.pack()
                 tk.Label(ytFormatBox, text="YouTube").pack(side='left')
-                ytOptionList = ['mp3',"原始影片 (最快)", "mp4 (較慢)"]   # 選項
+                ytOptionList = ['mp3', "原始影片 (最快)", "mp4 (較慢)"]   # 選項
                 global ytValue
                 ytValue = tk.StringVar()
                 ytValue.set('mp4')
