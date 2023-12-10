@@ -11,7 +11,6 @@ import threading
 
 # Download as PDF or original
 
-
 def download(redirected_urls):
     print(combinePdf)
     pdfs = []
@@ -78,7 +77,7 @@ def download(redirected_urls):
                                                 'when': 'playlist'}],
                             'retries': 5,
                             'writethumbnail': True}
-            elif ytValue.get() == "mp4":
+            elif ytValue.get() == "mp4 (較慢)":
                 ydl_opts = {'extract_flat': 'discard_in_playlist',
                             'format': 'bestvideo+bestaudio/best',
                             'fragment_retries': 10,
@@ -145,7 +144,10 @@ def download(redirected_urls):
 
 root = tk.Tk()
 root.title('EMDL - 萬能下載器')
-root.iconbitmap('favicon.ico')
+
+b64_data = requests.get("url").text
+image = PhotoImage(data=b64_data)
+root.tk.call('wm', 'iconphoto', root._w, image)
 x = (root.winfo_screenwidth()/2) - 250
 y = (root.winfo_screenheight()/2) - 250
 root.geometry('500x400+%d+%d' % (x, y))
@@ -202,6 +204,7 @@ def start():
             haveYouTube = True
         elif "https://docs.google.com/document/" in response.url:
             haveGoogleDoc += 1
+        a.set("已找到"+str(listbox.size())+"個有效連結\n並找出短網址真實位置")
     if redirected_urls:
         combine = tk.BooleanVar()
         listbox.pack()
@@ -215,7 +218,7 @@ def start():
                 ytFormatBox = tk.LabelFrame(group, bd=0)
                 ytFormatBox.pack()
                 tk.Label(ytFormatBox, text="YouTube").pack(side='left')
-                ytOptionList = ['mp3',"原始(最快)", "mp4"]   # 選項
+                ytOptionList = ['mp3',"原始影片 (最快)", "mp4 (較慢)"]   # 選項
                 global ytValue
                 ytValue = tk.StringVar()
                 ytValue.set('mp4')
